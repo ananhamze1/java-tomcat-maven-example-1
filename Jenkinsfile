@@ -3,15 +3,7 @@ pipeline {
   stages {
     stage('Clean') {
       steps {
-        dir(path: '/var/jenkins/workspace/va-tomcat-maven-example-1_master') {
-          sh 'echo $JENKINS_HOME'
-          sh '''export JENKINS_HOME=/var/jenkins
-echo $PATH
-export PATH=$PATH:/usr/bin/mvn
-echo $PATH
-mvn clean'''
-        }
-
+        sh 'mvn clean'
       }
     }
 
