@@ -4,7 +4,8 @@ pipeline {
     stage('Clean') {
       steps {
         sh 'echo $jenkins_home'
-        sh '/usr/bin/mvn clean'
+        sh '''export JENKINS_HOME=/var/jenkins
+/usr/bin/mvn clean'''
       }
     }
 
