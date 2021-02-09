@@ -58,8 +58,19 @@ pipeline {
       steps {
         sh '''cd /var/lib/jenkins/workspace/va-tomcat-maven-example-1_master
 docker build -t test .
-docker run -d test'''
+docker run -d -p 8085:8080 test /bin/bash'''
       }
+    }
+
+  }
+  post {
+    always {
+      script {
+        if (currentBuild.currentResult != 'SUCCESS') {
+          sh '''echo test'''
+        }
+      }
+
     }
 
   }
