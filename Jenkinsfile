@@ -57,7 +57,8 @@ pipeline {
       }
       steps {
         sh '''cd /var/lib/jenkins/workspace/va-tomcat-maven-example-1_master
-docker build -t test .'''
+docker build -t test .
+docker run -d test'''
       }
     }
 
