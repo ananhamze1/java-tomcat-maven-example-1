@@ -10,7 +10,7 @@ pipeline {
     stage('Compile') {
       steps {
         sh '''/usr/bin/mvn compile
-exit 0'''
+'''
       }
     }
 
@@ -68,7 +68,7 @@ docker run -d -p 8085:8080 test /bin/bash'''
     always {
       script {
         if (currentBuild.currentResult != 'SUCCESS') {
-          sh '''echo test'''
+          sh '''echo send email'''
         }
       }
 
