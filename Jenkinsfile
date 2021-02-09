@@ -6,6 +6,7 @@ pipeline {
         dir(path: '/var/jenkins/workspace/va-tomcat-maven-example-1_master') {
           sh 'echo $JENKINS_HOME'
           sh '''export JENKINS_HOME=/var/jenkins
+echo $PATH
 /usr/bin/mvn clean'''
         }
 
