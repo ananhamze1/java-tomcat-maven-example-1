@@ -56,7 +56,8 @@ pipeline {
 
       }
       steps {
-        sh 'docker build -t test -f /var/lib/jenkins/workspace/Dockerfile .'
+        sh '''cd /var/lib/jenkins/workspace/
+docker build -t test .'''
       }
     }
 
