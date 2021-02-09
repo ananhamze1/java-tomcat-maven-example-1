@@ -48,6 +48,13 @@ pipeline {
       }
     }
 
+    stage('Deploy') {
+      agent any
+      steps {
+        sh 'echo test'
+      }
+    }
+
   }
   parameters {
     string(name: 'name', defaultValue: 'anan', description: 'name')
