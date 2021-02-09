@@ -51,7 +51,7 @@ pipeline {
     stage('Deploy') {
       agent {
         dockerfile {
-          filename '/var/lib/jenkins/workspace/va-tomcat-maven-example-1_master/Dockerfile'
+          filename '/var/lib/jenkins/workspace/Dockerfile'
         }
 
       }
