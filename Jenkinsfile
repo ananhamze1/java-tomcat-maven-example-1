@@ -4,6 +4,7 @@ pipeline {
     stage('Clean') {
       steps {
         sh '/usr/bin/mvn clean'
+        sh 'echo $jenkins_home'
       }
     }
 
