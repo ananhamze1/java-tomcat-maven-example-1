@@ -14,6 +14,12 @@ pipeline {
     }
 
     stage('Test') {
+      when {
+        expression {
+          params.test == true
+        }
+
+      }
       parallel {
         stage('Test') {
           steps {
@@ -42,5 +48,9 @@ pipeline {
       }
     }
 
+  }
+  parameters {
+    string(name: 'name', defaultValue: 'anan', description: 'name')
+    booleanParam(name: 'test', defaultValue: true, description: 'Run Tests')
   }
 }
