@@ -43,10 +43,4 @@ pipeline {
     }
 
   }
-  tools {
-    maven 'm3'
-  }
-  environment {
-    JENKINS_HOME = '/var/jenkins'
-  }
 }
