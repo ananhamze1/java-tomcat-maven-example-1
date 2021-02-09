@@ -50,13 +50,13 @@ pipeline {
 
     stage('Deploy') {
       agent {
-        dockerfile {
-          filename '/var/lib/jenkins/workspace/Dockerfile'
+        node {
+          label 'master'
         }
 
       }
       steps {
-        sh 'echo test'
+        sh 'docker build -t test-f /var/lib/jenkins/workspace/Dockerfile .'
       }
     }
 
