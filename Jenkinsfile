@@ -49,7 +49,12 @@ pipeline {
     }
 
     stage('Deploy') {
-      agent any
+      agent {
+        dockerfile {
+          filename 'Dockerfile'
+        }
+
+      }
       steps {
         sh 'echo test'
       }
