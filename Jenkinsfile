@@ -44,4 +44,7 @@ pipeline {
     }
 
   }
+  environment {
+    JENKINS_HOME = '/var/jenkins'
+  }
 }
