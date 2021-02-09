@@ -3,13 +3,13 @@ pipeline {
   stages {
     stage('Clean') {
       steps {
-        sh 'mvn clean'
+        sh '/usr/bin/mvn clean'
       }
     }
 
     stage('Compile') {
       steps {
-        sh 'mvn compile'
+        sh '/usr/bin/mvn compile'
       }
     }
 
@@ -17,19 +17,19 @@ pipeline {
       parallel {
         stage('Test') {
           steps {
-            sh 'mvn test'
+            sh '/usr/bin/mvn test'
           }
         }
 
         stage('Test 1') {
           steps {
-            sh 'mvn test'
+            sh '/usr/bin/mvn test'
           }
         }
 
         stage('Test 2') {
           steps {
-            sh 'mvn test'
+            sh '/usr/bin/mvn test'
           }
         }
 
@@ -38,7 +38,7 @@ pipeline {
 
     stage('Package') {
       steps {
-        sh 'mvn package'
+        sh '/usr/bin/mvn package'
       }
     }
 
