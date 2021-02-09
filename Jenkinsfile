@@ -7,7 +7,9 @@ pipeline {
           sh 'echo $JENKINS_HOME'
           sh '''export JENKINS_HOME=/var/jenkins
 echo $PATH
-/usr/bin/mvn clean'''
+export PATH=$PATH:/usr/bin/mvn
+echo $PATH
+mvn clean'''
         }
 
       }
